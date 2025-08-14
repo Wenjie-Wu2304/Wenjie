@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>关于我们第二章之100天</title>
+<style>
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fff8f0;
+    text-align: center;
+    padding: 40px;
+  }
+  h1 {
+    color: #e75480;
+    font-size: 2.5em;
+  }
+  .card {
+    background: #fff0f5;
+    padding: 20px;
+    border-radius: 15px;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-top: 30px;
+    max-width: 700px;
+  }
+  label {
+    display: block;
+    font-size: 1.2em;
+    margin: 10px 0;
+  }
+  button {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 8px;
+    background-color: #ff69b4;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  button:hover {
+    background-color: #ff85c1;
+  }
+  .hidden {
+    display: none;
+  }
+  .letter-container {
+    background-color: #fff0f5;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+    line-height: 1.8em;
+    max-width: 800px;
+    margin: 20px auto;
+  }
+  .letter-container h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  /* 动画区域 */
+  .animation-container {
+    position: relative;
+    width: 300px;
+    height: 100px;
+    margin: 40px auto 20px auto;
+  }
+  .person {
+    position: absolute;
+    font-size: 2.5em;
+    top: 30px;
+    transition: left 2s ease-in-out, right 2s ease-in-out;
+  }
+  .person.left {
+    left: 0;
+  }
+  .person.right {
+    right: 0;
+  }
+  .person.move-left {
+    left: 100px;
+  }
+  .person.move-right {
+    right: 100px;
+  }
+  .heart {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2em;
+    opacity: 0;
+  }
+  .show-heart {
+    animation: heartPop 1s ease-in-out forwards infinite alternate;
+  }
+  @keyframes heartPop {
+    0% {
+      opacity: 0;
+      transform: scale(0.2) translateX(-50%);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.4) translateX(-50%);
+    }
+    100% {
+      transform: scale(1) translateX(-50%);
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- 第一页 -->
+<div id="page1">
+  <h1>关于我们第二章之100天 💕</h1>
+  <div class="card">
+    <button onclick="showQuestion()">李雯宝贝亲启</button>
+  </div>
+</div>
+
+<!-- 验证页面 -->
+<div id="questionBox" class="hidden">
+  <h2>李雯宝贝的生日是？</h2>
+  <div class="card">
+    <label><input type="radio" name="birthday" value="2003/8/1"> 2003/8/1</label>
+    <label><input type="radio" name="birthday" value="2003/6/28"> 2003/6/28</label>
+    <br>
+    <button onclick="checkBirthday()">提交</button>
+    <p id="tip" style="color: red;"></p>
+  </div>
+</div>
+
+<!-- 第二页 -->
+<div id="page2" class="hidden">
+  <h1>来自100天纪念日的一封信</h1>
+
+  <!-- 动画人物和爱心 -->
+  <div class="animation-container">
+    <div class="person left" id="left-person">👦</div>
+    <div class="person right" id="right-person">👧</div>
+    <div class="heart" id="heart">❤️</div>
+  </div>
+
+  <!-- 信件内容 -->
+  <div class="letter-container">
+    <h2>百日书笺</h2>
+    <p>致我最爱的李雯宝贝：</p>
+    <p>今天是我们在一起的第一百天。时间过得真快，又好像特别慢。现在我在窗边坐下，想到你此刻在地球另一端的样子，心里更多的是欣慰，想和你说说话，于是提笔写下此文。</p>
+    <p>回望这百日，我们早已习惯了跨越大洋的讯息问候，也渐渐适应了彼此生活的不同步调。我记得你向我展示可爱动人的日常随拍，我则拍下健身后的丑照寄予你；当我的清晨问候抵达你那边，你正于刚下班亦或是刚锻炼结束的夜晚；偶尔语音通话中的卡顿或者是对八卦主角的批斗，成为了我们这一百天的一部分。距离虽远，但这些细碎的默契，已经悄悄融进了我们的相处里。</p>
+    <p>或许你亦察觉，我们之间近来似乎少了几分初期的灼热，多了几分寻常的平静。但亲爱的，请勿将这份平静误读为疏离。恰恰相反，正是因为一起经历了些小摩擦、小磨合，我们反而更懂彼此了。这并非热情的消散，我之前跟宝贝说过，其实真正一段好的感情并不是看热恋时期的海誓山盟和甜言蜜语，相反，平淡时期的日常琐事或是争吵磨合才是一段感情的关键。这一百天沉淀下来的安稳与信任将在此刻得以体现。</p>
+    <p>前路漫漫，纵有千山横亘，但我对“我们”的期待反而越来越清晰。我常想象，当距离的藩篱终于消失，我们终可一同漫步于上海一隅宁静的公园，在某个寻常的下午共享一杯泉州西街的香茶，甚至只为我亲自下厨时的一道菜而争执几句——这些最朴素的愿望，支撑着我们穿越这现实的迷障。距离不是终点，它更像一条隧道，而我想和你一起走出去，看看出口的光亮。</p>
+    <p>百日很短，晨昏线无法将我们的心分割。百日很长，我们的感情经历了潮起潮落。但我知道，也许离我们见面的日子，还有下一个100天或者更多。但无论怎样，对于我们的感情我始终保持着期待，对你也始终保持着爱！</p>
+    <p>就当，离我们见面的日子，近了一百天！</p>
+    <p>下个一百天，我们慢慢走。</p>
+    <p>纸短情长，愿此信带去我的想念与信念。</p>
+    <p>此刻于夜色中<br>文杰</p>
+  </div>
+
+  <br>
+  <a href="https://wenjie-wu2304.github.io/Wenjie/" target="_blank">
+    <button>重温第一章</button>
+  </a>
+</div>
+
+<script>
+function showQuestion() {
+  document.getElementById('page1').classList.add('hidden');
+  document.getElementById('questionBox').classList.remove('hidden');
+}
+
+function checkBirthday() {
+  const radios = document.querySelectorAll('input[name="birthday"]');
+  let selected = null;
+  radios.forEach(r => { if (r.checked) selected = r.value; });
+
+  const tip = document.getElementById('tip');
+
+  if (!selected) {
+    tip.textContent = '请选择一个答案哦～';
+    return;
+  }
+
+  if (selected === '2003/8/1') {
+    alert('验证成功');
+    document.getElementById('questionBox').classList.add('hidden');
+    document.getElementById('page2').classList.remove('hidden');
+    startAnimation();
+  } else {
+    alert('未通过验证，你无权阅览');
+    tip.textContent = '未通过验证，你无权阅览';
+    setTimeout(() => {
+      window.open('', '_self');
+      window.close();
+    }, 3000);
+  }
+}
+
+function startAnimation() {
+  setTimeout(() => {
+    document.getElementById('left-person').classList.add('move-left');
+    document.getElementById('right-person').classList.add('move-right');
+  }, 500);
+  setTimeout(() => {
+    document.getElementById('heart').classList.add('show-heart');
+  }, 2500);
+}
+</script>
+
+</body>
+</html>
