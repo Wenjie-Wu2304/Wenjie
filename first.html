@@ -186,16 +186,17 @@
   <div id="final-page" class="hidden">
     <h2 style="color: #e75480;">临别前的一封信</h2>
     <div id="final-text" class="letter-container" style="max-height: none; overflow: visible;"></div>
-    <div style="margin-top: 20px;"><button onclick="goBackFromFinal()">返回上一页</button></div>
+    <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 10px; align-items: center;">
+      <button onclick="goBackFromFinal()">返回上一页</button>
+      <a href="https://wenjie-wu2304.github.io/Wenjie/100.html" target="_blank">
+        <button>跳转阅读第二章</button>
+      </a>
+    </div>
+    
   </div>
 
   <div class="emoji-icon">💘</div>
-
-  <div style="margin-top: 30px;">
-    <a href="https://wenjie-wu2304.github.io/Wenjie/100.html" target="_blank">
-      <button>跳转阅读第二章</button>
-    </a>
-  </div>
+ 
 
   <script>
     function showMessage() {
